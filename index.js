@@ -14,58 +14,63 @@ document.addEventListener("keydown", function(event) {
     Animate(event.key);
 })
 
-function Animate() {
+function Animate(current_key) {
+    var active_button = document.querySelector("." + current_key);
+    active_button.classList.add("pressed");
 
+    setTimeout(function() {
+        active_button.classList.remove("pressed");
+    }, 100);
 }
 
 function Sound(key) {
     switch (key) {
-        case "1":
+        case "a":
             var tom1 = new Audio("assets/sounds/tom-1.mp3");
             tom1.play();
             break;
         
-        case "2":
+        case "b":
             var tom2 = new Audio("assets/sounds/tom-2.mp3");
             tom2.play();
             break;
 
-        case "3":
+        case "c":
             var tom2 = new Audio("assets/sounds/tom-3.mp3");
             tom2.play();
             break;
 
-        case "4":
+        case "d":
             var tom2 = new Audio("assets/sounds/tom-4.mp3");
             tom2.play();
             break;
         
-        case "5":
+        case "e":
             var tom2 = new Audio("assets/sounds/snare.mp3");
             tom2.play();
             break;
             
-        case "6":
+        case "f":
             var tom2 = new Audio("assets/sounds/crash.mp3");
             tom2.play();
             break;
 
-        case "7":
+        case "g":
             var tom2 = new Audio("assets/sounds/kick-bass.mp3");
             tom2.play();
             break;
 
-        case "8":
+        case "h":
             var tom2 = new Audio("assets/sounds/kick-bass.mp3");
             tom2.play();
             break;
 
-        case "9":
+        case "i":
             var tom2 = new Audio("assets/sounds/crash.mp3");
             tom2.play();
             break;
 
         default:
-            alert("bhsodike 1 se 9 mein daba koi number")
+            alert("bhsodike a se i mein koi character daba")
     }
 }
